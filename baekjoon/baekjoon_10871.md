@@ -40,3 +40,7 @@ for(let i=0; i<N; i++){
 }
 console.log(result);
 ```
+
+## 풀이인증
+![image](https://user-images.githubusercontent.com/33210124/138402161-7187e3de-57e0-4b5d-909e-2d35af018b4f.png)
+
