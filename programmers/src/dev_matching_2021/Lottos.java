@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /* Level 1 : 로또의 최고 순위와 최저 순위 */
 
-class Solution {
-    public int[] solution(int[] lottos, int[] win_nums) {
+public class Lottos {
+    public static String solution(int[] lottos, int[] win_nums) {
         int count = 0; //같은 숫자가 몇 개인지 담을 변수
         int count0 = 0; //0개수가 몇 개인지 담을 변수 
         int[] answer = new int[2];
@@ -34,11 +34,11 @@ class Solution {
         //최저는 알아볼 수 없는 번호의 개수가 당첨번호와 하나도 일치하지 않을 때
         answer[1] = ranking(count);
         
-        return answer;
+        return Arrays.toString(answer);
     }
     
     //순위 함수
-    public int ranking(int ranking){
+    public static int ranking(int ranking){
         switch(ranking){
             case 6 : return 1; 
             case 5 : return 2;
@@ -48,4 +48,11 @@ class Solution {
             default : return 6;
         }
     }
+    
+    public static void main(String[] args) {
+		int[] lottos = {44,1,0,0,31,25};
+		int[] win_nums = {31,10,45,1,6,19};
+		
+		System.out.println(solution(lottos, win_nums));
+	}
 }
