@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class BOJ_15649 {
+public class BOJ_15649_N과M_1 {
 	static int N,M;
 	static int[] array, result;
 	static int num;

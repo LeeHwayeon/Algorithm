@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class BOJ_2493 {
+public class BOJ_2493_탑 {
 	static int N; // 탑의 수
 	static Stack<int[]> top; // top배열
 	static int num;

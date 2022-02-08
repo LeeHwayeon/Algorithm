@@ -2,7 +2,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class BOJ_10974 {
+public class BOJ_10974_모든순열 {
 	static int[] numbers;
 	static int[] result; // 결과 담을 배열
 	static boolean[] visited; // 방문했는지 안했는지 체크할 배열

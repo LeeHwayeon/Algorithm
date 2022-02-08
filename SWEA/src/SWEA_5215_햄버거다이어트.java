@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class SWEA_5215 {
+public class SWEA_5215_햄버거다이어트 {
 	static int TC, N, L;
 	static StringTokenizer line;
 	static int[] T, K;
