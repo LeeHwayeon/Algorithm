@@ -11,8 +11,9 @@ public class Lottos {
         int[] answer = new int[2];
         
         //정렬
-        Arrays.sort(lottos);
-        Arrays.sort(win_nums);
+//        Arrays.sort(lottos);
+//        Arrays.sort(win_nums);
+        //밑에서 for문 돌면서 정렬하기 때문에 굳이 할 필요 없음
         
         for(int i = 0; i<6; i++){
             //0개수 세기
