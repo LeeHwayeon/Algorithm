@@ -79,6 +79,8 @@ public class BOJ_2234_성곽 {
 				}
 			}
 		}
+		print(result);
+		System.out.println("--------------------");
 
 	}
 
