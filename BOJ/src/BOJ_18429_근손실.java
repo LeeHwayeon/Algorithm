@@ -27,7 +27,10 @@ public class BOJ_18429_근손실 {
 	}
 
 	public static void permu(int cnt, int w) {
-		if (cnt == N) ans++;
+		if (cnt == N) {
+			ans++;
+			return;
+		}
 		if (w < 500) return;
 
 		for (int i = 0; i < N; i++) {
