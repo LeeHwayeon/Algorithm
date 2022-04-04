@@ -17,7 +17,7 @@ public class BOJ_5214_환승 {
 		int K = Integer.parseInt(st.nextToken()); // 서로 연결하는 역 개수
 		int M = Integer.parseInt(st.nextToken()); // 하이퍼튜브 개수
 
-		ArrayList<Integer>[] station = new ArrayList[N + M + 1]; // 역의 수 + 하이퍼튜브 수 + 1 인 리스트배열 생성
+		ArrayList<Integer>[] station = new ArrayList[N + M + 1]; // 역의 수 + 하이퍼튜브 수 + 1
 		int[] count = new int[N + M + 1];
 
 		for (int i = 1; i < station.length; i++) {
