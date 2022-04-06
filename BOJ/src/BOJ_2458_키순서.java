@@ -7,8 +7,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class BOJ_2458_키순서 {
-	static int[] minCount, maxCount;
-	static int N, M;
+	static int N, M, count[];
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,9 +17,8 @@ public class BOJ_2458_키순서 {
 		M = Integer.parseInt(st.nextToken()); // 학생 키 비교한 횟수
 
 		ArrayList<Integer>[] minToMax = new ArrayList[N + 1]; // 자신보다 큰 정점 비교 리스트
-		maxCount = new int[N + 1];
 		ArrayList<Integer>[] maxToMin = new ArrayList[N + 1]; // 자신보다 작은 정점 비교 리스트
-		minCount = new int[N + 1];
+		count = new int[N + 1];
 		for (int i = 1; i <= N; i++) {
 			minToMax[i] = new ArrayList<Integer>();
 			maxToMin[i] = new ArrayList<Integer>();
@@ -35,20 +33,18 @@ public class BOJ_2458_키순서 {
 		}
 
 		for (int i = 1; i <= N; i++) {
-			bfs(i, minToMax, maxCount);
-			bfs(i, maxToMin, minCount);
+			bfs(i, minToMax);
+			bfs(i, maxToMin);
 		}
 
 		int ans = 0; // 자신의 키가 몇 번째인지 알 수 있는 학생 수
 		for (int i = 1; i <= N; i++) {
-			if (maxCount[i] + minCount[i] == N - 1) {
-				ans++;
-			}
+			if(count[i] == N-1) ans++;
 		}
 		System.out.println(ans);
 	}
 
-	public static void bfs(int num, ArrayList<Integer>[] list, int[] count) {
+	public static void bfs(int num, ArrayList<Integer>[] list) {
 		Queue<Integer> queue = new LinkedList<Integer>();
 		boolean[] visited = new boolean[N + 1];
 		queue.offer(num);
