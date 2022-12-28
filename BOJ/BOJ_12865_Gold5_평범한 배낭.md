@@ -53,21 +53,17 @@ public class BOJ_12865_평범한배낭 {
 
 - 1번 아이템 부터 n번 아이템까지 담을 수 있는지 없는지 확인
     - 1번 `(6,13)`
-        
-        ![IMG_DB8B1C53527B-1.jpeg](12865_%E1%84%91%E1%85%A7%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B7%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%A2%E1%84%82%E1%85%A1%E1%86%BC%20801bfaa6768f47a7a9f0bb7509b0313a/IMG_DB8B1C53527B-1.jpeg)
+       <div><img width="50%" src="https://user-images.githubusercontent.com/33210124/209809504-55d83911-266e-477e-860e-e644e5de7362.jpeg"></div>
         
         - 무게가 6이기 때문에 1~5일때는 담을 수 없음
     - 2번 `(4,8)`
-        
-        ![IMG_7FEC54ABF553-1.jpeg](12865_%E1%84%91%E1%85%A7%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B7%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%A2%E1%84%82%E1%85%A1%E1%86%BC%20801bfaa6768f47a7a9f0bb7509b0313a/IMG_7FEC54ABF553-1.jpeg)
+       <div><img width="50%" src="https://user-images.githubusercontent.com/33210124/209809767-3edad984-ff73-453c-a5f3-6ee9ceeaa8cf.jpeg"></div>
         
         - 초기 값은 이전 아이템이 각 무게마다 담은 가치가 저장될 것
         - 무게가 4이기 때문에 1~3일때는 담을 수  없음
         - 4부터 Math.max(이전 아이템 or 이전 아이템의 현재무게-내무게 가치 + 현재 내 가치) 비교
     - 3번 `(3,6)`
-        
-        ![IMG_0278B5539AF7-1.jpeg](12865_%E1%84%91%E1%85%A7%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B7%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%A2%E1%84%82%E1%85%A1%E1%86%BC%20801bfaa6768f47a7a9f0bb7509b0313a/IMG_0278B5539AF7-1.jpeg)
+       <div><img width="50%" src="https://user-images.githubusercontent.com/33210124/209809774-883d6cc5-17ee-40ba-9d71-291b3f96a854.jpeg"></div>
         
     - 4번 `(5,12)`
-        
-        ![IMG_308F4D1E3C55-1.jpeg](12865_%E1%84%91%E1%85%A7%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B7%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%A2%E1%84%82%E1%85%A1%E1%86%BC%20801bfaa6768f47a7a9f0bb7509b0313a/IMG_308F4D1E3C55-1.jpeg)
+       <div><img width="50%" src="https://user-images.githubusercontent.com/33210124/209809780-c4017659-394f-4365-b093-42c41dfb5fd2.jpeg"></div>
