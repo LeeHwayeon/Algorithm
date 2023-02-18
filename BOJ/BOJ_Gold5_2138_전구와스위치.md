@@ -12,57 +12,60 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class BOJ_Gold5_2138_전구와스위치 {
-	static int N, max;
-	static String nowStatus, makeStatus;
+	static int N, min;
+	static char[] nowStatus, makeStatus;
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
-		nowStatus = br.readLine();
-		makeStatus = br.readLine();
-		max = -2;
+		nowStatus = br.readLine().toCharArray();
+		makeStatus = br.readLine().toCharArray();
+		min = Integer.MAX_VALUE;
 
 		// 0번 스위치 안 눌렀을 때
-		pressCount(nowStatus, 0);
+		char[] newArray = Arrays.copyOf(nowStatus, N);
+		pressCount(newArray, 0);
 
-		// 0번 스위치 눌렀을 때
-		String str = switchStatus(nowStatus, 0) + switchStatus(nowStatus, 1);
-		str += N > 2 ? nowStatus.substring(2, N) : "";
-		pressCount(str, 1);
+		// 0번 스위치 눌렀을 때 : 0,1번 스위치 반전
+		char[] newArray2 = Arrays.copyOf(nowStatus, N);
+		newArray2[0] = switchStatus(nowStatus, 0);
+		newArray2[1] = switchStatus(nowStatus, 1);
+		pressCount(newArray2, 1);
 
-		System.out.println(max);
+		System.out.println(min == Integer.MAX_VALUE ? -1 : min);
 
 	}
 
-	static void pressCount(String str, int cnt) {
+	// 스위치 누르는 횟수 세기
+	static void pressCount(char[] str, int cnt) {
 		for (int i = 1; i < N; i++) {
-			if (str.charAt(i - 1) != makeStatus.charAt(i - 1)) { // 전 인덱스의 값이 다를 경우 스위치 누르기
-				cnt++;
-				String start = i - 1 >= 0 ? str.substring(0, i - 1) : "";
-				String one = i - 1 >= 0 ? switchStatus(str, i - 1) : "";
-				String two = switchStatus(str, i);
-				String three = i + 1 < N ? switchStatus(str, i + 1) : "";
-				String end = i + 2 < N ? str.substring(i + 2, N) : "";
-				str = start + one + two + three + end;
+			if (str[i - 1] != makeStatus[i - 1]) { // 전 인덱스의 값이 다를 경우 스위치 누르기
+				cnt++; // 스위치 횟수 증가
+				if (i - 1 >= 0) // i-1
+					str[i - 1] = switchStatus(str, i - 1);
+				str[i] = switchStatus(str, i); // i
+				if (i + 1 < N) // i+1
+					str[i + 1] = switchStatus(str, i + 1);
 			}
 		}
-		if (str.equals(makeStatus)) { // 만들고자 하는 상태와 같을 경우
-			max = Math.max(cnt, max);
-		} else { // 불가능한 경우
-			max = -1;
+		if (String.valueOf(str).equals(String.valueOf(makeStatus))) { // 만들고자 하는 상태와 같을 경우
+			min = Math.min(min, cnt);
 		}
 	}
 
-	static String switchStatus(String str, int index) {
-		if (str.charAt(index) == '0') {
-			return "1";
+	// 전구 상태 반전시키기
+	static char switchStatus(char[] str, int index) {
+		if (str[index] == '0') {
+			return '1';
 		}
-		return "0";
+		return '0';
 	}
 
 }
+
 ```
 
 - 처음에는 dfs로 처음부터 눌렀을 때, 안눌렀을 때 둘 다 따지면서 하니 메모리 초과
